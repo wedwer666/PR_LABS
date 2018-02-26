@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="commons-httpclient-2.0.2.jar">
+    <ANNOTATIONS>
+      <root url="jar://E:/commons-httpclient-2.0.2.jar.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://E:/commons-httpclient-2.0.2.jar.zip!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/commons-httpclient-2.0.2.jar.zip!/" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://E:/commons-httpclient-2.0.2.jar.zip!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://E:/commons-httpclient-2.0.2.jar.zip!/" />
+    </SOURCES>
+    <jarDirectory url="jar://E:/commons-httpclient-2.0.2.jar.zip!/" recursive="false" />
+    <jarDirectory url="jar://E:/commons-httpclient-2.0.2.jar.zip!/" recursive="false" type="SOURCES" />
+  </library>
+</component>
