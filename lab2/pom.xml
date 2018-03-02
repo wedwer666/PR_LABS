@@ -7,6 +7,18 @@
     <groupId>commons-httpclient</groupId>
     <artifactId>commons-httpclient</artifactId>
     <version>3.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
