@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
+import model.Category;
 import model.Order;
+import org.apache.http.HttpRequest;
 import org.apache.http.client.utils.URIBuilder;
 public class Model {
     final private String csvSplitBy = ",";
@@ -19,6 +21,13 @@ public class Model {
             "orders", "https://evil-legacy-service.herokuapp.com/api/v101/orders/"
     );
 
+    // function that gets all categories from urls
+    public CompletableFuture<List<Category>> getCategories()
+    {
+        final URI categoriesURI = URI.create(urls.get("categories"));
+        final HttpRequest categoriesRequest = HttpRequest.newBuilder
+    }
+    //function to get all orders from both urls
     public CompletableFuture<List<Order>> getOrders(LocalDate start, LocalDate end) {
         try {
             final URI ordersURI = new URIBuilder(urls.get("orders"))
@@ -29,5 +38,13 @@ public class Model {
             e.printStackTrace();
         }
         return null;
+    }
+
+    // final function that will calculate total sum from categories
+    public CompletableFuture<List<Category>> getTotalPerCategories(LocalDate start, LocalDate end)
+    {
+        //
+        final CompletableFuture<List<Order>> ordersFuture = getOrders(start, end);
+        return;
     }
 }
