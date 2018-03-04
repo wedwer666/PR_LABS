@@ -59,7 +59,7 @@ public class Model {
                             .skip(1)
                             .map(csv -> Order.fromCSV(csv, csvSplitBy))
                             .collect(Collectors.toList())
-                            );  
+                            );
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -67,11 +67,28 @@ public class Model {
     }
 
     // final function that will calculate total sum from categories
+    // forma in care trebuie sa ajunga datele
     public CompletableFuture<List<Category>> getTotalPerCategories(LocalDate start, LocalDate end)
     {
-        //
+        final CompletableFuture<List<Category>> categoriesFuture =  getCategories();
         final CompletableFuture<List<Order>> ordersFuture = getOrders(start, end);
-        return;
+        //cind in ambele o sa fie valoare
+        return categoriesFuture.thenCombine(ordersFuture, this::getTotalPerCategory);
+    }
+    private List<Category> getTotalPerCategory(List<Category> categories, List<Order> orders) {
+        getTotalPerCategory(categories, orders, null);
+        return categories;
     }
 
+    private double getTotalPerCategory(List<Category> categories, List<Order> orders, Category parent) {
+        final double total = getTotalPerCategory(parent, orders)
+                + categories.stream()
+                .filter(child -> parent == null
+                        ? child.categoryId == null
+                        : child.categoryId != null && parent.id == child.categoryId)
+                )
+
+
+    // toata logica - filtreaza toate categorrile asa ca id-ul pairentelui sa corespunda cu id-ul copilului si category
+    // Category parent
 }
