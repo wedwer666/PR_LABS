@@ -34,20 +34,15 @@ public class Model {
                 .build();
 
         // return the result in async form
-        return client.sendAsync
+        return client.sendAsync(categoriesRequest)
+                .thenApply(list -> list.stream()
+                        .skip(1)
+                        .map(csv -> Category.fromCSV(csv, csvSplitBy))
+                        .collect(Collectors.toList()));
     }
-    // function that send async all the data available
-    public CompletableFuture<List<String>> sendAsync(HttpRequest request)
-    {
-        // in order to avoid deamon thread i made new thread to start and to avoid terminating process with 0
-        return CompletableFuture.supplyAsync(() -> );
-    }
+
     // function that gets all categories from urls
-    public CompletableFuture<List<Category>> getCategories()
-    {
-        final URI categoriesURI = URI.create(urls.get("categories"));
-        final HttpRequest categoriesRequest = HttpRequest;
-    }
+
     //function to get all orders from both urls
     public CompletableFuture<List<Order>> getOrders(LocalDate start, LocalDate end) {
         try {
@@ -55,6 +50,16 @@ public class Model {
                     .addParameter("start", start.toString())
                     .addParameter("end", end.toString())
                     .build();
+            final HttpRequest ordersRequest = HttpRequest.newBuilder(ordersURI)
+                    .header("Accept", "text/csv")
+                    .header("x-api-key", key)
+                    .build();
+            return client.sendAsync(ordersRequest)
+                    .thenApply(list -> list.stream()
+                            .skip(1)
+                            .map(csv -> Order.fromCSV(csv, csvSplitBy))
+                            .collect(Collectors.toList())
+                            );  
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }

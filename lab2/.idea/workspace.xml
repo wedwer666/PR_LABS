@@ -16,8 +16,8 @@
       <file leaf-file-name="Model.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+            <state relative-caret-position="181">
+              <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -348,12 +348,12 @@
       <workItem from="1519158609150" duration="16522000" />
       <workItem from="1519286257869" duration="4981000" />
       <workItem from="1519627958079" duration="892000" />
-      <workItem from="1520017876762" duration="8941000" />
+      <workItem from="1520017876762" duration="10558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31336000" />
+    <option name="totallyTimeSpent" value="32953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1386" height="788" extended-state="0" />
@@ -522,29 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <marker date="1520176592220" expanded="true" signature="273:366" ph="{...}" />
-            <marker date="1520176592220" expanded="true" signature="433:725" ph="{...}" />
-            <marker date="1520176592220" expanded="true" signature="766:979" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <marker date="1520102430473" expanded="true" signature="22:137" ph="..." />
-            <marker date="1520102430473" expanded="true" signature="255:491" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/server/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -564,23 +541,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <marker date="1520102430473" expanded="true" signature="22:137" ph="..." />
+            <marker date="1520102430473" expanded="true" signature="255:491" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/server/HttpClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="578">
+          <caret line="37" column="99" lean-forward="false" selection-start-line="37" selection-start-column="99" selection-end-line="37" selection-end-column="99" />
           <folding>
-            <marker date="1520177142185" expanded="true" signature="23:229" ph="..." />
-            <marker date="1520177142185" expanded="true" signature="281:288" ph="{}" />
-            <marker date="1520177142185" expanded="true" signature="334:349" ph=" { " />
-            <marker date="1520177142185" expanded="true" signature="373:379" ph=" }" />
+            <marker date="1520179623959" expanded="true" signature="23:229" ph="..." />
+            <marker date="1520179623959" expanded="true" signature="281:288" ph="{}" />
+            <marker date="1520179623959" expanded="false" signature="334:349" ph=" { " />
+            <marker date="1520179623959" expanded="false" signature="373:379" ph=" }" />
+            <marker date="1520179623959" expanded="true" signature="525:711" ph="{...}" />
+            <marker date="1520179623959" expanded="true" signature="792:1009" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <marker date="1520176592220" expanded="true" signature="273:366" ph="{...}" />
+            <marker date="1520176592220" expanded="true" signature="433:725" ph="{...}" />
+            <marker date="1520176592220" expanded="true" signature="766:979" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        <state relative-caret-position="181">
+          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
