@@ -11,4 +11,16 @@ public class Category {
         this.name = name;
         this.categoryId = categoryId;
     }
+    public static Category fromCSV( String csv, String delimiter)
+    {
+        final String[] dates = csv.split(delimiter);
+        final String name = dates[1];
+        final Integer categoryId = dates.length == 2 ? null : Integer.parseInt(dates[2]);
+        return new Category(id, name, categoryId);
+    }
+    @Override public String toString()
+    {
+        return "Category {" +
+                "id = " + id + " , name = " + '\'' + "categoryId = " + categoryId + ", total = " + total + '}';
+    }
 }

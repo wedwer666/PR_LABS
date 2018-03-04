@@ -3,17 +3,19 @@ package server;
 import javafx.util.Builder;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.Map;
 
 public class HttpRequest {
     final public Map<String, String> headers;
     final public URI uri;
 
-    public HttpRequest(Map<String, String> headers, URI uri) {
-        this.headers = headers;
+    private HttpRequest(URI uri, Map<String, String> headers) {
         this.uri = uri;
+        this.headers = headers;
     }
 
+    // crearea constructorilor pentru httprequest
     public static Builder newBuilder()
     {
         return new Builder();
@@ -24,12 +26,23 @@ public class HttpRequest {
         final Builder builder = new Builder();
         return builder.uri(uri);
     }
+
     static public class Builder
     {
+        private Map<String, String> headers = new HashMap<>();
         private URI uri;
 
+        public HttpRequest build()
+        {
+            return new HttpRequest(uri, headers);
+        }
         public Builder uri(URI uri) {
             this.uri = uri;
+            return this;
+        }
+        public Builder header(String name, String value)
+        {
+            headers.put(name, value);
             return this;
         }
     }

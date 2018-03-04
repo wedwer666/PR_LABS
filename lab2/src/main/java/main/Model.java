@@ -25,7 +25,7 @@ public class Model {
     public CompletableFuture<List<Category>> getCategories()
     {
         final URI categoriesURI = URI.create(urls.get("categories"));
-        final HttpRequest categoriesRequest = HttpRequest.newBuilder
+        final HttpRequest categoriesRequest = HttpRequest;
     }
     //function to get all orders from both urls
     public CompletableFuture<List<Order>> getOrders(LocalDate start, LocalDate end) {
