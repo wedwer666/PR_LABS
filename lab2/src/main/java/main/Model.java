@@ -51,6 +51,7 @@ public class Model {
 
             return client.sendAsync(ordersRequest)
                     .thenApply(list -> list.stream()
+                            // to get only orders and eliminate categories
                             .skip(1)
                             .map(csv -> Order.fromCSV(csv, csvSplitBy))
                             .collect(Collectors.toList()));
@@ -60,10 +61,12 @@ public class Model {
         return null;
     }
 
+    // forma in care trebuie sa ajunga datele
     public CompletableFuture<List<Category>> getTotalPerCategories(LocalDate start, LocalDate end) {
         final CompletableFuture<List<Category>> categoriesFuture = getCategories();
         final CompletableFuture<List<Order>> ordersFuture = getOrders(start, end);
 
+        //cind in ambele o sa fie valoare
         return categoriesFuture.thenCombine(ordersFuture, this::getTotalPerCategory);
     }
 
@@ -71,9 +74,11 @@ public class Model {
         getTotalPerCategory(categories, orders, null);
         return categories;
     }
-
+    // toata logica - filtreaza toate categorrile asa ca id-ul pairentelui sa corespunda cu id-ul copilului si category
+    // Category parent
     private double getTotalPerCategory(List<Category> categories, List<Order> orders, Category parent) {
         final double total = getTotalPerCategory(parent, orders)
+                // catogoria parinte se sumeaza cu descendent copil
                 + categories.stream()
                 .filter(child -> parent == null
                         ? child.categoryId == null
@@ -86,7 +91,10 @@ public class Model {
 
     private double getTotalPerCategory(Category category, List<Order> orders) {
         return category == null ? 0 : orders.parallelStream()
+                // ca el sa lase doar acei ce au conexiunea parinte -copil
+                // merge prin toate ordinurile si lasa doar acele care coincid
                 .filter(order -> order.categoryId == category.id)
+                // scoate tot tolalul
                 .map(order -> order.total)
                 .reduce(0.0, (a, b) -> a + b);
     }
