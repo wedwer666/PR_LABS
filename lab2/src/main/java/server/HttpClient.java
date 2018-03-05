@@ -23,6 +23,14 @@ public class HttpClient {
     {
         try {
             final URL url = request.uri.toURL();
+            final URLConnection connection = url.openConnection();
+            request.headers.forEach(connection::addRequestProperty);
+
+            try (final BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                return reader.lines().collect(Collectors.toList());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         catch (IOException e )
