@@ -74,12 +74,13 @@ public class Model {
         getTotalPerCategory(categories, orders, null);
         return categories;
     }
-    // toata logica - filtreaza toate categorrile asa ca id-ul pairentelui sa corespunda cu id-ul copilului si category
+    // toata logica - filtreaza toate categorrile asa ca id-ul parintelui sa corespunda cu id-ul copilului si category
     // Category parent
     private double getTotalPerCategory(List<Category> categories, List<Order> orders, Category parent) {
         final double total = getTotalPerCategory(parent, orders)
                 // catogoria parinte se sumeaza cu descendent copil
                 + categories.stream()
+                // filtrarea categorii ca sa corespunda cu standarte
                 .filter(child -> parent == null
                         ? child.categoryId == null
                         : child.categoryId != null && parent.id == child.categoryId)
