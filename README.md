@@ -12,6 +12,7 @@
 
 1. In order to run the test the user must install IntelliJ IDEA
 2. Git clone the project and run them.
+3. Run the project in IDE.
 
 ### And coding style tests
 
