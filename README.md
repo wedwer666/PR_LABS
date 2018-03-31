@@ -2,7 +2,7 @@
 
 |   Laborator  |     Tasks                                               |  
 | -------------| ---------------------------                                  |
-|      1       |     | 
+|      1       |     Report Generator      |
 |      2       |     |
 |      3       |     |   
 |      4       |     |  
@@ -10,7 +10,9 @@
 
 ## Running the tests
 
-In order to run the test the user must git clone the project and run them.
+1. In order to run the test the user must install IntelliJ IDEA
+2. Git clone the project and run them.
+3. Run the project in IDE.
 
 ### And coding style tests
 
