@@ -17,7 +17,7 @@ public class ClientApp {
                 Session session = Session.getDefaultInstance(props, null);
                 Store store = session.getStore("imaps");
 
-                store.connect("imap.gmail.com", "mitriucmaria@gmail.com", "marlin96");
+                store.connect("imap.gmail.com", "***********", "***********");
                 System.out.println(store);
                 Folder inbox = store.getFolder("Inbox");
                 inbox.open(Folder.READ_ONLY);
