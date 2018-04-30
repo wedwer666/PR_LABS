@@ -56,7 +56,6 @@ public class TCPServer {
                         out.println(flip());
                     } else if (input.startsWith("exit")) {
                         out.println("Exit");
-                        e();
                     } else {
                         out.println("Comanda invalida. Lista de comenzi valide - help");
                     }
@@ -99,14 +98,6 @@ public class TCPServer {
                     " /date - data curenta, /hello Text - text input, /number - numar random, flip - aruncarea cu mondede, " +
                     ", file - trimitera de fisier, /help - informatie, /exit - inchide";
             return comands;
-        }
-
-        private void e(){
-            try {
-                Thread.currentThread().join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
